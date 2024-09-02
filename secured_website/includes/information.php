@@ -1,6 +1,12 @@
 <?php
-$host = 'localhost';
-$user = 'safouane';
-$password = 'safphpmyadmi';
-$db = 'sushi';
+
+	// DataBase
+	$host = 'localhost';
+	$user = 'root';
+	$password = '';
+	$db = 'sushi';
+
+	// Données utilisateur
+	$tel = "0659120830";
+
 ?>

@@ -1,8 +1,8 @@
 <?php
+include "includes/information.php";
 include_once "includes/header.html";
 include_once "includes/navbar.php";
 
-include "includes/information.php";
 include "includes/database.php";
 $conn = mysqli_connect($host, $user, $password, $db);
 

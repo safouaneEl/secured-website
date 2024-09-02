@@ -1,0 +1,17 @@
+[02/09/2024]
+	/- Back to top
+	- Changer logo du site
+	- Changer les information dans le footer
+	- Localisation s'insert plusieur fois dans BD
+	- Données utilisateur : Definir les données dans la page include/information.php , puis utilisé ces données dans les autres pages.
+	- Page d'accueils :
+		- Button optenir un devis affiche une popup qui contient un formulaire pour demander devis
+			- modal link : https://getbootstrap.com/docs/4.0/components/modal/
+			- creer une nouvelle table de devis
+		- au lieu de Savoir Plus ecrit 'Nous contactez pour en savoir plus'
+		- Caché les sections : Plans de Tarification + Offre Spéciale + Nos Agents + Témoignages + Articles
+		- S'inscrire 
+			- Creer une nouvelle table pour enregistrer les email
+			- Afficher un message de succes
+	- Supprimer le contenu duppliqué
+	- Caché tout les pages

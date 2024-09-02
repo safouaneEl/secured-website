@@ -27,7 +27,7 @@
                 </div>
             </div>
             <a href="contact.php" class="nav-item nav-link <?php if($page == 'contact') {echo 'active';} ?>">Contact/Inscription</a>
-            <a href="tel:0624366586" class="nav-item nav-link nav-contact bg-secondary text-white px-5 ms-lg-5"><i class="bi bi-telephone-outbound me-2"></i>0624366586</a>
+            <a href="tel:<?php echo $tel; ?>" class="nav-item nav-link nav-contact bg-secondary text-white px-5 ms-lg-5"><i class="bi bi-telephone-outbound me-2"></i><?php echo $tel; ?></a>
         </div>
     </div>
 </nav>

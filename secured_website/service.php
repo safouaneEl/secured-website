@@ -1,8 +1,9 @@
 <?php
-        include_once "includes/header.html";
-         
-        include_once "includes/navbar.php";
 
+        include_once "includes/information.php";
+        include_once "includes/header.html";
+        include_once "includes/navbar.php";
+        
 ?>
 
     <!-- Hero Start -->
