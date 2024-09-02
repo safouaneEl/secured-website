@@ -3,7 +3,7 @@
     --primary: #2878EB;
     --secondary: #F14D5D;
     --light: #ECF4FF;
-    --dark: #120F2D;
+    --dark: #03001b;
 }
 
 [class^=flaticon-]:before,
@@ -183,7 +183,7 @@ h6,
 }
 
 .hero-header {
-    background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/eye.jpeg) top right no-repeat;
+    background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../img/locked.jpeg) top right no-repeat;
     background-size: cover;
 }
 

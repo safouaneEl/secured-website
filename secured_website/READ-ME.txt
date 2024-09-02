@@ -1,11 +1,22 @@
-  =>  Template Name    : SafeCam - CCTV Website Template
 
-  =>  Template Link    : https://htmlcodex.com/cctv-website-template
+Étapes pour exécuter le projet
+1)Configurer les informations de la base de données :
+    Accédez au fichier includes/informations.php.
+    Modifiez les variables $host, $user, $password, et $db avec les informations correctes pour se connecter à votre base de données.
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+2)Installer et configurer XAMPP (vous pouvez travailler avec votre control panel) :
 
-  =>  Template Author  : HTML Codex
+    Si XAMPP n'est pas déjà installé, téléchargez-le et installez-le à partir du site officiel.
+    Ouvrez le panneau de contrôle XAMPP (XAMPP Control Panel).
+    Démarrez les services Apache et MySQL en cliquant sur les boutons "Start" à côté de chaque service.
 
-  =>  Author Website   : https://htmlcodex.com
+3)Placer le projet dans le répertoire approprié :
 
-  =>  About HTML Codex : HTML Codex is one of the top creators and publishers of Free HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Read more at ( https://htmlcodex.com/about-us )
+    Copiez le dossier du projet dans le répertoire xampp/htdocs.
+    Assurez-vous que tous les fichiers du projet sont bien placés dans ce répertoire.
+
+4)Accéder au projet :
+
+    Ouvrez votre navigateur web.
+    Tapez http://localhost/secured_website  dans la barre d'adresse.
+    Le site devrait se charger avec les informations de base de données que vous avez configurées.
