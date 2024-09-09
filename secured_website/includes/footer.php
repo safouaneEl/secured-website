@@ -82,10 +82,10 @@
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
-    //Get the button
+    
     let mybutton = document.getElementById("back-to-top");
 
-    // When the user scrolls down 20px from the top of the document, show the button
+    
     window.onscroll = function () {
       scrollFunction();
     };
@@ -100,7 +100,7 @@
         mybutton.style.display = "none";
       }
     }
-    // When the user clicks on the button, scroll to the top of the document
+    
     mybutton.addEventListener("click", backToTop);
 
     function backToTop() {
