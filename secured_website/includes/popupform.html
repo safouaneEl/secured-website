@@ -84,11 +84,25 @@
     .open-button:hover {
         opacity: 1;
     }
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        color: #000;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    .close-button:hover {
+        color: red;
+    }
 </style>
     
 <!-- Popup form -->
 <div class="form-popup" id="myForm">
     <form action="singup.php" class="form-container" method="post">
+        <span class="close-button" onclick="closeForm()">&times;</span>
         <h1>Obtenir un devis</h1>
     
         <label for="nom"><b>Nom Complet</b></label>
@@ -114,4 +128,9 @@
     function closeForm() {
         document.getElementById("myForm").style.display = "none";
     }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+    
 </script>
