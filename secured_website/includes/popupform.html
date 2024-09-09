@@ -1,0 +1,117 @@
+<!-- popup form css -->
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* Button used to open the contact form - fixed */
+    .open-button {
+        background-color: #2878EB;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        z-index: 99;
+    }
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+        display: none; /* Ensure the form is hidden initially */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* dark background */
+        z-index: 100; /* stays on top */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+        max-width: 600px;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+    
+    /* Focus styles */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    
+    /* Submit button styles */
+    .form-container .btn {
+        background-color: #2878EB;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+    
+    /* Close button */
+    .form-container .cancel {
+        background-color: #F14D5D;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
+</style>
+    
+<!-- Popup form -->
+<div class="form-popup" id="myForm">
+    <form action="singup.php" class="form-container" method="post">
+        <h1>Obtenir un devis</h1>
+    
+        <label for="nom"><b>Nom Complet</b></label>
+        <input type="text" placeholder="Entrez votre nom" name="popupnom" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Entrez votre email" name="popupemail" required>
+    
+        <label for="devis"><b>Entrez votre devis détaillé</b></label>
+        <input type="text" placeholder="Entrez votre proposition" name="devis" required>
+    
+        <button type="submit" class="btn" name="popupbutton">Obtenir</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+    </form>
+</div>
+    
+<!-- Popup form JS -->
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>

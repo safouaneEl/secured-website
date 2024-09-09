@@ -1,8 +1,9 @@
 <?php
 
         include_once "includes/information.php";
-        include_once "includes/header.html";
+        include_once "includes/header.php";
         include_once "includes/navbar.php";
+        include_once "includes/popupform.html";
         
 ?>
 
@@ -21,7 +22,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase animated bounceInDown">Meilleurs Services de Sécurité</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Votre sécurité notre priorité</h1>
-                            <a href="price.php#offre" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Obtenir un devis</a>
+                            <button class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" onclick="openForm()">Obtenir un devis</button>
                             <a href="contact.php#singup" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contactez-nous</a>
                         </div>
                     </div>
@@ -33,7 +34,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase animated bounceInDown">Meilleurs Services de Sécurité</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Protéger ce qui compte le plus</h1>
-                            <a href="price.php#offre" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Obtenir un devis</a>
+                            <button class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" onclick="openForm()">Obtenir un devis</button>
                             <a href="contact.php#singup" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contactez-nous</a>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase animated bounceInDown">Meilleurs Services de Sécurité</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">La confiance en sécurité, jour et nuit</h1>
-                            <a href="price.php#offre" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Obtenir un devis</a>
+                            <button class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" onclick="openForm()">Obtenir un devis</button>
                             <a href="contact.php#singup" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contactez-nous</a>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" hidden >
         <div class="container">
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
@@ -116,7 +117,7 @@
                             <i class="fas fa-eye d-block display-1 fw-normal text-secondary mb-3"></i>
                             <h3 class="mb-3">Surveillance et Monitoring 24/7</h3>
                             <p>Nous offrons un service de surveillance et monitoring 24/7 pour garantir la sécurité de vos installations en permanence. Grâce à nos technologies avancées de caméras de sécurité et de systèmes de détection, nous surveillons activement vos locaux et réagissons immédiatement en cas de menace. Notre équipe de professionnels est formée pour gérer tous les types de situations d'urgence avec rapidité et efficacité.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -126,7 +127,7 @@
                             <i class="fas fa-door-closed display-1 text-secondary"></i>
                             <h3 class="mb-3">Contrôle d'Accès Sécurisé</h3>
                             <p>Notre service de contrôle d'accès sécurisé vous permet de gérer et de restreindre l'accès à vos installations. Nous installons et maintenons des systèmes d'accès par carte, code, biométrie, et autres technologies avancées. Vous avez un contrôle total sur qui peut entrer et sortir de vos locaux, tout en gardant une trace de chaque accès pour des raisons de sécurité et de conformité.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +137,7 @@
                             <i class="fas fa-shield-alt display-1 text-secondary "></i>
                             <h3 class="mb-3">Protection Personnelle et Escorte</h3>
                             <p>Pour les personnes qui nécessitent une sécurité personnelle accrue, nous offrons des services de protection personnelle et escorte. Nos agents de sécurité hautement qualifiés sont discrets et professionnels, assurant votre sécurité lors de vos déplacements, événements, ou autres situations sensibles. Nous adaptons nos services à vos besoins spécifiques pour garantir votre tranquillité d'esprit.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +147,7 @@
                             <i class="fas fa-user d-block display-1 fw-normal text-secondary mb-3"></i>
                             <h3 class="mb-3">Patrouilles de Sécurité Mobile</h3>
                             <p>Pour une sécurité renforcée, nous offrons des patrouilles de sécurité mobile, assurées par nos agents qualifiés. Ces patrouilles régulières permettent de dissuader les comportements suspects et d'intervenir rapidement en cas de besoin, garantissant ainsi la protection continue de vos propriétés.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +157,7 @@
                             <i class="flaticon-camera d-block display-1 fw-normal text-secondary"></i>
                             <h3 class="mb-3">Consulation en Sécurité</h3>
                             <p>Nos experts en sécurité vous offrent des services de consultation pour évaluer et renforcer la sécurité de vos installations. Nous analysons les vulnérabilités potentielles et proposons des solutions sur mesure pour améliorer la protection de votre entreprise ou de votre domicile, vous aidant ainsi à prévenir les risques avant qu'ils ne deviennent des problèmes.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -166,7 +167,7 @@
                             <i class="fas fa-bell d-block display-1 fw-normal text-secondary " id="services"></i>
                             <h3 class="mb-3">Installation et Maintenance de Systèmes d'Alarme</h3>
                             <p>Nous installons des systèmes d'alarme sophistiqués pour protéger vos biens contre les intrusions. Nos services incluent également la maintenance régulière de ces systèmes pour garantir leur bon fonctionnement à tout moment. Que ce soit pour des propriétés résidentielles ou commerciales, nous adaptons nos solutions à vos besoins spécifiques.</p>
-                            <a href="contact.php">Savoir Plus<i class="bi bi-arrow-right ms-2" ></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2" ></i></a>
                         </div>
                     </div>
                 </div>
@@ -177,7 +178,7 @@
 
 
     <!-- Plans de Tarification Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 75px;">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 75px;" hidden>
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Plans de Tarification</h5>
@@ -255,7 +256,7 @@
 
 
     <!-- Offre Spéciale Start -->
-<div class="container-fluid bg-offer my-5 py-5 wow zoomIn" data-wow-delay="0.1s">
+<div class="container-fluid bg-offer my-5 py-5 wow zoomIn" data-wow-delay="0.1s" hidden>
     <div class="container py-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-7 text-center">
@@ -274,10 +275,10 @@
 
 
     <!-- Team Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="ourteam">
-    <div class="container">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="ourteam" hidden >
+    <div class="container" >
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Nos Agents</h5>
+            <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;" >Nos Agents</h5>
             <h1 class="display-5 mb-0">Rencontrez Notre Équipe Professionnelle</h1>
         </div>
         <div class="row g-5">
@@ -334,7 +335,7 @@
 
 
 <!-- Testimonial Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" hidden>
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Témoignages</h5>
@@ -378,7 +379,7 @@
 
 
     <!-- Blog Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" hidden>
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Articles</h5>
@@ -427,9 +428,10 @@
     </div>
 </div>
 <!-- Blog End --> 
+
 <?php
 
-    include_once "includes/footer.html";
+    include_once "includes/footer.php";
 
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
         include_once "includes/information.php";
-        include_once "includes/header.html";
+        include_once "includes/header.php";
         include_once "includes/navbar.php";
         
 ?>
@@ -29,7 +29,7 @@
         <div class="row g-5">
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="position-relative rounded-top">
-                    <img class="img-fluid rounded-top w-100" src="img/team-1.jpg" alt="Aymane Sahat">
+                    <img class="img-fluid rounded-top w-100" src="<?php echo $agent3photo; ?>" alt="<?php echo $agent3nom; ?>">
                     <div class="position-absolute bottom-0 end-0 d-flex flex-column bg-white p-1" style="margin-right: -25px;">
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="bg-primary text-center rounded-bottom p-4">
-                    <h3 class="text-white">Aymane Sahat</h3>
-                    <p class="text-white m-0">Chef de la Sécurité</p>
+                    <h3 class="text-white"><?php echo $agent3nom; ?></h3>
+                    <p class="text-white m-0"><?php echo $agent3service; ?></p>
                 </div>
             </div>
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                 <div class="position-relative rounded-top">
-                    <img class="img-fluid rounded-top w-100" src="img/team-2.jpg" alt="Adil Twel">
+                    <img class="img-fluid rounded-top w-100" src="<?php echo $agent2photo; ?>" alt="<?php echo $agent2nom; ?>">
                     <div class="position-absolute bottom-0 end-0 d-flex flex-column bg-white p-1" style="margin-right: -25px;">
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -53,13 +53,13 @@
                     </div>
                 </div>
                 <div class="bg-primary text-center rounded-bottom p-4">
-                    <h3 class="text-white">Adil Twel</h3>
-                    <p class="text-white m-0">Spécialiste de la Surveillance</p>
+                    <h3 class="text-white"><?php echo $agent2nom; ?></h3>
+                    <p class="text-white m-0"><?php echo $agent2service; ?>/p>
                 </div>
             </div>
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
                 <div class="position-relative rounded-top">
-                    <img class="img-fluid rounded-top w-100" src="img/team-3.jpg" alt="Barae Slimani">
+                    <img class="img-fluid rounded-top w-100" src="<?php echo $agent3photo; ?>" alt="<?php echo $agent3nom; ?>">
                     <div class="position-absolute bottom-0 end-0 d-flex flex-column bg-white p-1" style="margin-right: -25px;">
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                         <a class="btn btn-outline-secondary btn-square m-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 <div class="bg-primary text-center rounded-bottom p-4">
-                    <h3 class="text-white">Barae Slimani</h3>
-                    <p class="text-white m-0">Expert en Contrôle d'Accès</p>
+                    <h3 class="text-white"><?php echo $agent3nom; ?></h3>
+                    <p class="text-white m-0"><?php echo $agent3service; ?></p>
                 </div>
             </div>
         </div>
@@ -79,6 +79,6 @@
     
 
 <?php
-        include_once "includes/footer.html";
+        include_once "includes/footer.php";
 
 ?>

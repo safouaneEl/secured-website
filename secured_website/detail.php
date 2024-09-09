@@ -3,7 +3,7 @@
         # connection a la base de donnes : saisir vos propre donnees
         include_once "includes/information.php";
         
-        include_once "includes/header.html";
+        include_once "includes/header.php";
         include_once "includes/navbar.php";
 
         $conn = mysqli_connect($host, $user, $password, $db);
@@ -211,7 +211,7 @@
     <!-- Blog End -->
 
 <?php
-        include_once "includes/footer.html";
+        include_once "includes/footer.php";
 
 
 ?>

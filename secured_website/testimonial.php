@@ -1,7 +1,7 @@
 <?php
 
         include_once "includes/information.php";
-        include_once "includes/header.html";
+        include_once "includes/header.php";
         include_once "includes/navbar.php";
         
 ?>
@@ -64,5 +64,5 @@
     
 
 <?php
-    include_once "includes/footer.html";
+    include_once "includes/footer.php";
 ?>

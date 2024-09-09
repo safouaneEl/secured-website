@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 /* inscription */ 
 if (isset($_POST["button"])) {
 
-    include_once "includes/information.php";
+    include "includes/information.php";
 
    
     $conn = mysqli_connect($host, $user, $password, $db);
@@ -83,4 +83,88 @@ if (isset($_POST["button"])) {
 
     
 }
+// email_footer inscription:
+
+if (isset($_POST["button_footer"])) {
+
+    include "includes/information.php";
+
+   
+    $conn = mysqli_connect($host, $user, $password, $db);
+
+    
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    
+    $email_footer = $_POST['email_footer'];
+
+    $insert = "INSERT INTO footeremail (email) 
+               VALUES ('$email_footer')";
+
+    
+    $query = mysqli_query($conn, $insert);
+
+    
+    if ($query) {
+        echo "<script>
+            alert('Inscription a été effectué avec succès!Un email sera envoyée dans votre boite!');
+            window.location.href='index.php?signup=success';
+        </script>";
+        exit();
+    } else {
+        echo "<script>
+            alert('Réessayez l\'inscription!');
+        </script>";
+    }
+
+    
+}
+
+//pop up form :
+
+if (isset($_POST["popupbutton"])) {
+
+        include "includes/information.php";
+    
+       
+        $conn = mysqli_connect($host, $user, $password, $db);
+    
+        
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    
+        
+        $popupnom = $_POST['popupnom'];
+        $popupemail = $_POST['popupemail'];
+        $devis = $_POST['devis'];
+    
+        $insert = "INSERT INTO devis (nom, email, devis) 
+                   VALUES ('$popupnom', '$popupemail', '$devis')";
+    
+        
+        $query = mysqli_query($conn, $insert);
+    
+        
+        if ($query) {
+            echo "<script>
+                alert('Merci pour votre confiance! Votre proposition a été prise en compte. Notre équipe vous contactera très bientôt.');
+                window.location.href='index.php?signup=success';
+            </script>";
+            exit();
+        } else {
+            echo "<script>
+                alert('Réessayez l\'inscription, s\'il vous plaît.');
+            </script>";
+        }
+        
+    
+        
+}
+    
+
+
+
 ?>

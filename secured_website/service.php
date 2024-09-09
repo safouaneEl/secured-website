@@ -1,7 +1,7 @@
 <?php
 
         include_once "includes/information.php";
-        include_once "includes/header.html";
+        include_once "includes/header.php";
         include_once "includes/navbar.php";
         
 ?>
@@ -105,7 +105,7 @@
                     </div>
                     <p class="text-white mb-4">Profitez de notre offre exclusive pour sécuriser vos biens avec une réduction de 50% sur tous nos services lors de votre première commande. Que ce soit pour la surveillance, le contrôle d'accès, ou la protection personnelle, notre équipe de professionnels est prête à répondre à vos besoins avec efficacité et discrétion. Ne manquez pas cette occasion de renforcer la sécurité de ce qui compte le plus pour vous.</p>
                     <a href="contact.php" class="btn btn-primary py-md-3 px-md-5 me-3" >Commandez Maintenant</a>
-                    <a href="services.php" class="btn btn-secondary py-md-3 px-md-5">Savoir Plus</a>
+                    <a href="service.php" class="btn btn-secondary py-md-3 px-md-5">Savoir Plus</a>
                 </div>
             </div>
         </div>
@@ -158,5 +158,5 @@
     
 
 <?php
-        include_once "includes/footer.html";
+        include_once "includes/footer.php";
 ?>

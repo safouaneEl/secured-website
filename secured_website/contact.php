@@ -1,6 +1,6 @@
 <?php
 include "includes/information.php";
-include_once "includes/header.html";
+include_once "includes/header.php";
 include_once "includes/navbar.php";
 
 include "includes/database.php";
@@ -126,5 +126,5 @@ $location_data = mysqli_fetch_assoc($result);
 <!-- S'inscrire End -->
 
 <?php
-include_once "includes/footer.html";
+include_once "includes/footer.php";
 ?>
