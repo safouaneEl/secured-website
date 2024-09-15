@@ -115,7 +115,7 @@ $location_data = mysqli_fetch_assoc($result);
                                 <input type="password" class="form-control border-0 px-4 py-3" name="password" rows="1" placeholder="Votre mot de passe" required></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" name="button" id="singup" onclick="showmercifamillepopup()">S'inscrire</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" name="button" id="singup">S'inscrire</button>
                             </div>
                         </div>
                     </form>
@@ -153,7 +153,7 @@ $location_data = mysqli_fetch_assoc($result);
             } else {
                 echo 'closemercicontactpopup();';
             }
-            unset($_SESSION['form_success']); 
+            unset($_SESSION['email_success']); 
         }
         ?>
     }
