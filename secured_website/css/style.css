@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #2878EB;
-    --secondary: #F14D5D;
+    --primary: rgb(0, 0, 0); 
+    --secondary: orangered;
     --light: #ECF4FF;
     --dark: #03001b;
 }
@@ -205,7 +205,7 @@ h6,
 
 .service-item div:hover::after {
     width: 100%;
-    background: var(--primary);
+    background: var(--secondary);
 }
 
 .service-item * {

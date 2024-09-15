@@ -1,5 +1,4 @@
 <?php 
-/* email */ 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -7,45 +6,76 @@ require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
+
+
 if (isset($_POST['submit'])) {
-    $mail = new PHPMailer(true);
+    session_start(); // Start the session
+    include "includes/information.php"; // Database connection info
 
-    try {
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'elkhadirsafouane@gmail.com'; 
-        $mail->Password = 'tsnlctwrgziayfrn'; // motdepass de l'app 
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+    // Connect to the database
+    $conn = mysqli_connect($host, $user, $password, $db);
 
-        $mail->setFrom($_POST['email']); 
-        $mail->addAddress('safouane.fas@gmail.com'); 
-
-        $mail->isHTML(true);
-        $mail->Subject = $_POST['object'];
-        $mail->Body = $_POST['message'];
-
-        $mail->send();
-
-        echo '<script>
-            alert("Message est envoyé avec succès!");
-            window.location.href = "contact.php?status=success";
-        </script>';
-        exit();
-
-    } catch (Exception $e) {
-        echo '<script>
-            alert("Échec de l\'envoi du message. Veuillez réessayer.");
-            window.location.href = "index.php?status=failure";
-        </script>';
-        exit();
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     }
+
+    // Collect form data
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $object = mysqli_real_escape_string($conn, $_POST['object']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    // Try to insert data into the database
+    $insert = "INSERT INTO email (email, objet, message) VALUES ('$email', '$object', '$message')";
+    
+    if (mysqli_query($conn, $insert)) {
+        // Data inserted successfully, now send the email
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'elkhadirsafouane@gmail.com'; 
+            $mail->Password = 'tsnlctwrgziayfrn'; // Use your actual app password
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
+
+            // Sender and recipient
+            $mail->setFrom($email); 
+            $mail->addAddress('safouane.fas@gmail.com'); 
+
+            // Email content
+            $mail->isHTML(true);
+            $mail->Subject = $object;
+            $mail->Body = $message;
+
+            $mail->send();
+
+            // Email sent successfully
+            $_SESSION['email_success'] = true;
+
+        } catch (Exception $e) {
+            // Email sending failed
+            $_SESSION['email_success'] = false;
+        }
+    } else {
+        // If data insertion failed, set email success to false
+        $_SESSION['email_success'] = false;
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    // Redirect back to index.php with the session success/failure
+    header("Location: contact.php");
+    exit();
 }
+
 
 /* inscription */ 
 if (isset($_POST["button"])) {
-
+    session_start();
     include "includes/information.php";
 
    
@@ -70,101 +100,81 @@ if (isset($_POST["button"])) {
 
     
     if ($query) {
-        echo "<script>
-            alert('Inscription a été effectué avec succès!');
-            window.location.href='index.php?signup=success';
-        </script>";
-        exit();
+        $_SESSION['famille_success'] = true; // Set session variable
     } else {
-        echo "<script>
-            alert('Réessayez l\'inscription!');
-        </script>";
+        $_SESSION['famille_success'] = false; // Set session variable
     }
+    sleep(3);
+    header("Location: contact.php");
+    exit();
+    
 
     
 }
-// email_footer inscription:
 
-if (isset($_POST["button_footer"])) {
-
+// first command:
+if (isset($_POST["1commandbutton"])) {
+    session_start();
     include "includes/information.php";
 
-   
     $conn = mysqli_connect($host, $user, $password, $db);
 
-    
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    
-    $email_footer = $_POST['email_footer'];
+    $name = $_POST['commandnom'];
+    $email = $_POST['commandemail'];
 
-    $insert = "INSERT INTO footeremail (email) 
-               VALUES ('$email_footer')";
+    $insert = "INSERT INTO first_command (nom , email) VALUES ('$name', '$email')";
 
-    
     $query = mysqli_query($conn, $insert);
 
-    
     if ($query) {
-        echo "<script>
-            alert('Inscription a été effectué avec succès!Un email sera envoyée dans votre boite!');
-            window.location.href='index.php?signup=success';
-        </script>";
-        exit();
+        $_SESSION['command1_success'] = true; // Set session variable for success
     } else {
-        echo "<script>
-            alert('Réessayez l\'inscription!');
-        </script>";
+        $_SESSION['command1_success'] = false; // Set session variable for failure
     }
-
-    
+    header("Location: service.php");
+    exit();
 }
 
-//pop up form :
+// devis pop up form :
 
 if (isset($_POST["popupbutton"])) {
-
-        include "includes/information.php";
+    session_start();
+    include "includes/information.php";
     
        
-        $conn = mysqli_connect($host, $user, $password, $db);
+    $conn = mysqli_connect($host, $user, $password, $db);
     
         
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
     
         
-        $popupnom = $_POST['popupnom'];
-        $popupemail = $_POST['popupemail'];
-        $devis = $_POST['devis'];
-    
-        $insert = "INSERT INTO devis (nom, email, devis) 
-                   VALUES ('$popupnom', '$popupemail', '$devis')";
-    
-        
-        $query = mysqli_query($conn, $insert);
-    
-        
-        if ($query) {
-            echo "<script>
-                alert('Merci pour votre confiance! Votre proposition a été prise en compte. Notre équipe vous contactera très bientôt.');
-                window.location.href='index.php?signup=success';
-            </script>";
-            exit();
-        } else {
-            echo "<script>
-                alert('Réessayez l\'inscription, s\'il vous plaît.');
-            </script>";
-        }
+    $popupnom = $_POST['popupnom'];
+    $popupemail = $_POST['popupemail'];
+    $popuptel = $_POST['popuptel'];
+    $popuppays = $_POST['popuppays'];
+    $popupprojet = $_POST['popupprojet'];
+    $popupbudget = $_POST['popupbudget'];
+    $popupdetail = $_POST['popupdetail'];
         
     
+    $insert = "INSERT INTO devis (nom, email, numero, pays, projet, budget, detail) 
+                VALUES ('$popupnom', '$popupemail', '$popuptel', '$popuppays', '$popupprojet', '$popupbudget', '$popupdetail')";
+    
         
+    $query = mysqli_query($conn, $insert);
+    
+    if ($query) {
+        $_SESSION['form_success'] = true; // Set session variable
+    } else {
+        $_SESSION['form_success'] = false; // Set session variable
+    }
+    header("Location: index.php");
+    exit();        
 }
-    
-
-
-
 ?>

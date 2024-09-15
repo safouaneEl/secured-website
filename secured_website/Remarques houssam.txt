@@ -15,3 +15,22 @@
 			/- Afficher un message de succes.
 	/- Supprimer le contenu duppliqué
 	/- Caché tout les pages
+	
+[09/09/2024]
+	/-Le "x" du popup doit être clair.
+	/-Ajouter d'autres champs pour le devis.
+	/-Indication des champs obligatoires.
+	/-Vérification avant envoi.
+	/-Après validation, afficher un autre popup avec PHP.
+	/-Toutes les tables de la base de données doivent avoir une clé primaire.
+	/-Supprimer les informations dupliquées.
+	/-Toutes les alertes doivent être des popups.
+	-Les couleurs agressives doivent être changées en des couleurs attrayantes, l'utilisation des couleurs doit avoir un sens.
+	/-Le champ doit être grand (formulaire popup).
+	/-Accueil : afficher 3 services avec moins d'infos + "En savoir plus".
+	?-Les informations doivent être affichées dans une page PHP ou dans une table de base de données.
+	/-Les services dans le domaine.
+	?-Les pages doivent s'ouvrir dans des fenêtres externes.
+	/?-Inscription à la newsletter.
+	/-Les liens rapides inutiles doivent être supprimés.
+	/-Changement de nom de la compagnie.

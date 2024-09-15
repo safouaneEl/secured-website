@@ -17,12 +17,10 @@
     <div class="container pt-5">
         <div class="row g-5">
             <div class="col-lg-4 col-md-6 order-lg-1 order-1">
-                <h3 class="text-white mb-4">liens rapides</h3>
+                <h3 class="text-white mb-4">Liens rapides</h3>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-light mb-2" href="index.php#accueil"><i class="bi bi-arrow-right text-primary me-2"></i>Accueil</a>
-                    <a class="text-light mb-2" href="index.php#ourteam"><i class="bi bi-arrow-right text-primary me-2"></i>Nos Agents</a>
                     <a class="text-light mb-2" href="index.php#services"><i class="bi bi-arrow-right text-primary me-2"></i>Contrôle d'Accès Sécurisé</a>
-                    <a class="text-light mb-2" href="blog.php#recent"><i class="bi bi-arrow-right text-primary me-2"></i>Posts recents</a>
                     <a class="text-light" href="index.php#offre"><i class="bi bi-arrow-right text-primary me-2"></i>Offre Spéciale</a>
                 </div>
             </div>
@@ -41,14 +39,7 @@
                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href="<?php echo $instagram; ?>" <?php if(empty($instagram)) {echo "style='display: none;'";} ?>><i class="fab fa-instagram fw-normal"></i></a>
                 </div>
             </div>
-            <div class="col-12">
-                <form class="mx-auto" style="max-width: 600px;" method="post" action="singup.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control border-white p-3" placeholder="Your Email" name="email_footer">
-                            <button class="btn btn-primary px-4" name="button_footer">S'inscrire</button>
-                        </div>
-                </form>
-            </div>
+
         </div>
     </div>
 </div>

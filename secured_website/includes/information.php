@@ -1,10 +1,10 @@
 <?php
 
 	// DataBase
-	$host = '';
-	$user = '';
-	$password = '';
-	$db = 'secured';
+	$host = 'localhost';
+	$user = 'safouane';
+	$password = 'safphpmyadmi';
+	$db = 'secure';
 
 	// Données utilisateur
 	$tel = "0659120830";

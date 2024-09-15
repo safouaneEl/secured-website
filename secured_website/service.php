@@ -3,6 +3,7 @@
         include_once "includes/information.php";
         include_once "includes/header.php";
         include_once "includes/navbar.php";
+        include_once "includes/popupform.php";
         
 ?>
 
@@ -34,7 +35,7 @@
                             <i class="fas fa-eye d-block display-1 fw-normal text-secondary mb-3"></i>
                             <h3 class="mb-3">Surveillance et Monitoring 24/7</h3>
                             <p>Nous offrons un service de surveillance et monitoring 24/7 pour garantir la sécurité de vos installations en permanence. Grâce à nos technologies avancées de caméras de sécurité et de systèmes de détection, nous surveillons activement vos locaux et réagissons immédiatement en cas de menace. Notre équipe de professionnels est formée pour gérer tous les types de situations d'urgence avec rapidité et efficacité.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +45,7 @@
                             <i class="fas fa-door-closed display-1 text-secondary"></i>
                             <h3 class="mb-3">Contrôle d'Accès Sécurisé</h3>
                             <p>Notre service de contrôle d'accès sécurisé vous permet de gérer et de restreindre l'accès à vos installations. Nous installons et maintenons des systèmes d'accès par carte, code, biométrie, et autres technologies avancées. Vous avez un contrôle total sur qui peut entrer et sortir de vos locaux, tout en gardant une trace de chaque accès pour des raisons de sécurité et de conformité.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
                             <i class="fas fa-shield-alt display-1 text-secondary "></i>
                             <h3 class="mb-3">Protection Personnelle et Escorte</h3>
                             <p>Pour les personnes qui nécessitent une sécurité personnelle accrue, nous offrons des services de protection personnelle et escorte. Nos agents de sécurité hautement qualifiés sont discrets et professionnels, assurant votre sécurité lors de vos déplacements, événements, ou autres situations sensibles. Nous adaptons nos services à vos besoins spécifiques pour garantir votre tranquillité d'esprit.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                             <i class="fas fa-user d-block display-1 fw-normal text-secondary mb-3"></i>
                             <h3 class="mb-3">Patrouilles de Sécurité Mobile</h3>
                             <p>Pour une sécurité renforcée, nous offrons des patrouilles de sécurité mobile, assurées par nos agents qualifiés. Ces patrouilles régulières permettent de dissuader les comportements suspects et d'intervenir rapidement en cas de besoin, garantissant ainsi la protection continue de vos propriétés.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
                             <i class="flaticon-camera d-block display-1 fw-normal text-secondary"></i>
                             <h3 class="mb-3">Consulation en Sécurité</h3>
                             <p>Nos experts en sécurité vous offrent des services de consultation pour évaluer et renforcer la sécurité de vos installations. Nous analysons les vulnérabilités potentielles et proposons des solutions sur mesure pour améliorer la protection de votre entreprise ou de votre domicile, vous aidant ainsi à prévenir les risques avant qu'ils ne deviennent des problèmes.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
                             <i class="fas fa-bell d-block display-1 fw-normal text-secondary " id="services"></i>
                             <h3 class="mb-3">Installation et Maintenance de Systèmes d'Alarme</h3>
                             <p>Nous installons des systèmes d'alarme sophistiqués pour protéger vos biens contre les intrusions. Nos services incluent également la maintenance régulière de ces systèmes pour garantir leur bon fonctionnement à tout moment. Que ce soit pour des propriétés résidentielles ou commerciales, nous adaptons nos solutions à vos besoins spécifiques.</p>
-                            <a href="contact.html">Savoir Plus<i class="bi bi-arrow-right ms-2" ></i></a>
+                            <a href="contact.php">Nous contactez pour en savoir plus<i class="bi bi-arrow-right ms-2" ></i></a>
                         </div>
                     </div>
                 </div>
@@ -104,8 +105,8 @@
                         <h1 class="display-5 text-white">Bénéficiez de 50% de Réduction sur Nos Services de Sécurité pour Votre Première Commande</h1>
                     </div>
                     <p class="text-white mb-4">Profitez de notre offre exclusive pour sécuriser vos biens avec une réduction de 50% sur tous nos services lors de votre première commande. Que ce soit pour la surveillance, le contrôle d'accès, ou la protection personnelle, notre équipe de professionnels est prête à répondre à vos besoins avec efficacité et discrétion. Ne manquez pas cette occasion de renforcer la sécurité de ce qui compte le plus pour vous.</p>
-                    <a href="contact.php" class="btn btn-primary py-md-3 px-md-5 me-3" >Commandez Maintenant</a>
-                    <a href="service.php" class="btn btn-secondary py-md-3 px-md-5">Savoir Plus</a>
+                    <button class="btn btn-primary py-md-3 px-md-5 me-3" onclick="commandpopup()" >Commandez Maintenant</button>
+                    <a href="contact.php" class="btn btn-secondary py-md-3 px-md-5">Savoir Plus</a>
                 </div>
             </div>
         </div>
@@ -156,6 +157,89 @@
     </div>
     <!-- Testimonial End -->
     
+<!-- 1 command form-->
+<div class="form-popup" id="commandpopup" style="display: none;">
+    <form action="singup.php" class="form-container" method="post">
+        <h1>Inscription</h1>
+        <span class="close-button" onclick="closecommandpopup()">&times;</span>
+
+        <div class="form-group">
+            <div class="form-column">
+                <label for="nom"><b>Nom Complet</b></label>
+                <input type="text" placeholder="Entrez votre nom (Obligatoire)" name="commandnom" required>
+            </div>
+            <div class="form-column">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Entrez votre email (Obligatoire)" name="commandemail" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn" name="1commandbutton">Envoyer</button>
+        <button type="button" class="btn cancel" onclick="closecommandpopup()">Fermer</button>
+    </form>
+</div>
+
+
+<!-- merci pour votre 1 command Popup -->
+<div class="form-popup" id="merci1command" style="display: none;">
+    <div class="form-container">
+        <h2>Nous avons bien reçu votre première commande !</h2>
+        <p>Votre première commande est en cours d'examen. Nous vous contacterons bientôt pour finaliser les détails. Merci de choisir notre service et profitez de votre réduction de 50% !</p>
+        <button class="btn" onclick="closemerci1commandpopup()">Fermer</button>
+    </div>
+</div>
+
+<!-- erreur 1st command-->
+<div class="form-popup" id="erreur1command" style="display: none;">
+    <div class="form-container">
+        <h2>Erreur lors de la soumission de votre commande</h2>
+        <p>Nous sommes désolés, une erreur s'est produite lors de la soumission de votre commande. Veuillez vérifier vos informations et réessayer. Si le problème persiste, n'hésitez pas à nous contacter pour obtenir de l'aide. Nous nous excusons pour la gêne occasionnée et vous remercions de votre compréhension.</p>
+        <button class="btn" onclick="closeerreurcommandpopup()">Fermer</button>
+    </div>
+</div>
+
+<!-- 1 command js-->
+<script>
+    function commandpopup(){
+        document.getElementById("commandpopup").style.display = "flex";
+    }
+
+    function closecommandpopup(){
+        document.getElementById("commandpopup").style.display = "none";
+    }
+    function merci1commandpopup(){
+        document.getElementById("merci1command").style.display = "flex";
+    }
+
+    function closemerci1commandpopup(){
+        document.getElementById("merci1command").style.display = "none";
+    }
+
+    function erreurcommandpopup() {
+    document.getElementById("erreur1command").style.display = "flex";
+}
+
+    function closeerreurcommandpopup() {
+    document.getElementById("erreur1command").style.display = "none";
+}
+
+</script>
+
+<script>
+    window.onload = function() {
+        <?php
+        if (isset($_SESSION['command1_success'])) {
+            if ($_SESSION['command1_success']) {
+                echo 'merci1commandpopup();'; 
+            } else {
+                echo 'erreurcommandpopup();';
+            }
+            unset($_SESSION['command1_success']); // Clear session variable after use
+        }
+        ?>
+    }
+</script>
+
 
 <?php
         include_once "includes/footer.php";

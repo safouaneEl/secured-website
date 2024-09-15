@@ -14,22 +14,14 @@ if ($conn->query($sql) !== TRUE) {
 
 $conn->select_db($db);
 
-$sql = "CREATE TABLE IF NOT EXISTS comments (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL,
+$sql = "CREATE TABLE IF NOT EXISTS email (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(30) NOT NULL,
-    commentaire TEXT NOT NULL,
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    objet VARCHAR(30) NOT NULL,
+    message TEXT(500) NOT NULL
 )";
 if ($conn->query($sql) !== TRUE) {
-    die("<script>alert('Erreur lors de la création de la table \'comments\': " . $conn->error . "');</script>");
-}
-
-$sql = "CREATE TABLE IF NOT EXISTS footeremail (
-    email VARCHAR(100) NOT NULL
-)";
-if ($conn->query($sql) !== TRUE) {
-    die("<script>alert('Erreur lors de la création de la table \'footeremail\': " . $conn->error . "');</script>");
+    die("<script>alert('Erreur lors de la création de la table \'email\': " . $conn->error . "');</script>");
 }
 
 $sql = "CREATE TABLE IF NOT EXISTS localisation (
@@ -44,18 +36,32 @@ if ($conn->query($sql) !== TRUE) {
 }
 
 $sql = "CREATE TABLE IF NOT EXISTS devis (
-    nom VARCHAR(50) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL ,
     email VARCHAR(30) NOT NULL,
-    devis VARCHAR(1000) NOT NULL
+    numero INT(14) NOT NULL,
+    pays TEXT(15) NOT NULL,
+    projet VARCHAR(50) NOT NULL,
+    budget VARCHAR(10) NOT NULL,
+    detail TEXT NOT NULL
+
 )";
 if ($conn->query($sql) !== TRUE) {
     die("<script>alert('Erreur lors de la création de la table \'devis\': " . $conn->error . "');</script>");
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS first_command (
+    nom VARCHAR(50) NOT NULL ,
+    email VARCHAR(30) NOT NULL PRIMARY KEY
+)";
+if ($conn->query($sql) !== TRUE) {
+    die("<script>alert('Erreur lors de la création de la table \'first_command\': " . $conn->error . "');</script>");
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS secured_website_members (
-    nom VARCHAR(50) NOT NULL,
+    nom VARCHAR(50) NOT NULL ,
     email VARCHAR(30) NOT NULL,
-    motdepass VARCHAR(100) NOT NULL
+    motdepass VARCHAR(100) NOT NULL PRIMARY KEY
 )";
 if ($conn->query($sql) !== TRUE) {
     die("<script>alert('Erreur lors de la création de la table \'secured_website_members\': " . $conn->error . "');</script>");

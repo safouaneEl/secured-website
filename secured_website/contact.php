@@ -2,6 +2,7 @@
 include "includes/information.php";
 include_once "includes/header.php";
 include_once "includes/navbar.php";
+include_once "includes/popupform.php";
 
 include "includes/database.php";
 $conn = mysqli_connect($host, $user, $password, $db);
@@ -50,7 +51,7 @@ $location_data = mysqli_fetch_assoc($result);
                                 <textarea class="form-control border-0 px-4 py-3" name="message" rows="8" placeholder="Message"></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" name="submit">Envoyer le Message</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" name="submit" onclick="showmercicontactpopup()">Envoyer le Message</button>
                             </div>
                         </div>
                     </form>                    
@@ -114,7 +115,7 @@ $location_data = mysqli_fetch_assoc($result);
                                 <input type="password" class="form-control border-0 px-4 py-3" name="password" rows="1" placeholder="Votre mot de passe" required></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" name="button" id="singup">S'inscrire</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" name="button" id="singup" onclick="showmercifamillepopup()">S'inscrire</button>
                             </div>
                         </div>
                     </form>
@@ -125,6 +126,90 @@ $location_data = mysqli_fetch_assoc($result);
 </div>
 <!-- S'inscrire End -->
 
+<!-- merci pour le contact Popup -->
+<div class="form-popup" id="mercicontact" style="display: none;">
+    <div class="form-container">
+        <h2>Votre message a été envoyé avec succès!</h2>
+        <p>Un email sera envoyée dans votre boite</p>
+        <button class="btn" onclick="closemercicontactpopup()">Fermer</button>
+    </div>
+</div>
+<!-- merci pour le contact js -->
+<script>
+    function showmercicontactpopup(){
+        document.getElementById("mercicontact").style.display = "flex";
+    }
+
+    function closemercicontactpopup(){
+        document.getElementById("mercicontact").style.display = "none";
+    }
+</script>
+<script>
+    window.onload = function() {
+        <?php
+        if (isset($_SESSION['email_success'])) {
+            if ($_SESSION['email_success']) {
+                echo 'showmercicontactpopup();'; 
+            } else {
+                echo 'closemercicontactpopup();';
+            }
+            unset($_SESSION['form_success']); 
+        }
+        ?>
+    }
+</script>
+
+<!-- merci pour famille Popup -->
+<div class="form-popup" id="mercifamille" style="display: none;">
+    <div class="form-container">
+        <h2>Inscription a été effectué avec succès!</h2>
+        <p>Bienvenue ! Vous êtes maintenant officiellement un nouveau membre de notre famille. Nous sommes ravis de vous avoir parmi nous !</p>
+        <button class="btn" onclick="closemercifamillepopup()">Fermer</button>
+    </div>
+</div>
+
+<!-- erreur pour famille Popup -->
+<div class="form-popup" id="erreurfamille" style="display: none;">
+    <div class="form-container">
+        <h2>Inscription n'a pas été effectué avec succès!</h2>
+        <p>Une erreur s'est produite lors de l'inscription. Veuillez réessayer ou nous contacter pour obtenir de l'aide.</p>
+        <button class="btn" onclick="closemercifamillepopup()">Fermer</button>
+    </div>
+</div>
+<!-- merci pour famille js -->
+<script>
+    function showmercifamillepopup(){
+        document.getElementById("mercifamille").style.display = "flex";
+    }
+
+    function closemercifamillepopup(){
+        document.getElementById("mercifamille").style.display = "none";
+    }
+
+    function showerreurfamillepopup(){
+        document.getElementById("erreurfamille").style.display = "flex";
+    }
+
+    function closeerreurfamillepopup(){
+        document.getElementById("erreurfamille").style.display = "none";
+    }
+</script>
+<script>
+    window.onload = function() {
+    <?php
+    if (isset($_SESSION['famille_success'])) {
+        if ($_SESSION['famille_success']) {
+            echo 'showmercifamillepopup();'; 
+        } else {
+            echo 'showerreurfamillepopup();';
+        }
+        unset($_SESSION['famille_success']);
+    }
+    ?>
+}
+</script>
+
 <?php
 include_once "includes/footer.php";
 ?>
+
